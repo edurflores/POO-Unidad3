@@ -30,6 +30,7 @@ class ManejadorFacultades:
             self.agregaFacultad(unaFacultad)
             lineasCarreras.clear() ### Reinicia lista de lineas de carreras
             facu = linea ### La linea corresponde a una nueva facultad
+        archivo.close()
         print('Se han cargado las facultades.')
     def buscaFacultad(self,xcod):
         i = 0

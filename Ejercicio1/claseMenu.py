@@ -7,6 +7,7 @@ class Menu:
         self.__switcher = {
             '1':self.opcion1,
             '2':self.opcion2,
+            '3':self.opcion3,
             '0':self.salir
             }
 
@@ -33,3 +34,11 @@ class Menu:
         ban = self.__mf.muestraCarrera(nomcar)
         if ban == False:
             print('Error. Carrera no encontrada.')
+
+    def opcion3(self):
+        cod = int(input('Ingrese codigo de facultad a borrar:'))
+        indice = self.__mf.buscaFacultad(cod)
+        if indice != -1:
+            self.__mf.borraFacultad(indice)
+        else:
+            print('Error. Facultad no encontrada.')

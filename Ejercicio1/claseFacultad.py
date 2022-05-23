@@ -34,3 +34,7 @@ class Facultad:
 
     def getLocalidad(self):
         return self.__localidad
+
+    def __del__(self):
+        print('Borrando facultad...')
+        del self.__listaCarreras

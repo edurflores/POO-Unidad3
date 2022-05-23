@@ -71,3 +71,7 @@ class ManejadorFacultades:
             i += 1
             j = 0
         return ban
+
+    def borraFacultad(self,xind):
+        del self.__listaFacultades[xind]
+        print('Facultad borrada.')

@@ -1,0 +1,116 @@
+{
+    "__class__": "ManejadorAparatos",
+    "aparatos": [
+        {
+            "__class__": "Televisor",
+            "__atributos__": {
+                "marca": "BGH",
+                "modelo": "B4232",
+                "color": "Negro",
+                "paisfabric": "Argentina",
+                "preciobase": 5000.0,
+                "tipopantalla": "LED",
+                "pulgadas": 40,
+                "tipodefinicion": "HD",
+                "conexioninternet": false
+            }
+        },
+        {
+            "__class__": "Televisor",
+            "__atributos__": {
+                "marca": "LG",
+                "modelo": "MP55HQ",
+                "color": "Negro",
+                "paisfabric": "Corea del Sur",
+                "preciobase": 15000.0,
+                "tipopantalla": "LED",
+                "pulgadas": "50",
+                "tipodefinicion": "FULL HD",
+                "conexioninternet": true
+            }
+        },
+        {
+            "__class__": "Televisor",
+            "__atributos__": {
+                "marca": "Samsung",
+                "modelo": "SM32SD",
+                "color": "Negro",
+                "paisfabric": "Corea del Sur",
+                "preciobase": 10000.0,
+                "tipopantalla": "LED",
+                "pulgadas": "30",
+                "tipodefinicion": "SD",
+                "conexioninternet": true
+            }
+        },
+        {
+            "__class__": "Televisor",
+            "__atributos__": {
+                "marca": "Phillips",
+                "modelo": "PH60HD",
+                "color": "Negro",
+                "paisfabric": "Estados Unidos",
+                "preciobase": 50000.0,
+                "tipopantalla": "LED",
+                "pulgadas": "60",
+                "tipodefinicion": "FULL HD",
+                "conexioninternet": true
+            }
+        },
+        {
+            "__class__": "Televisor",
+            "__atributos__": {
+                "marca": "Sony",
+                "modelo": "SY40HD",
+                "color": "Negro",
+                "paisfabric": "Japon",
+                "preciobase": 20000.0,
+                "tipopantalla": "LED",
+                "pulgadas": "40",
+                "tipodefinicion": "HD",
+                "conexioninternet": true
+            }
+        },
+        {
+            "__class__": "Televisor",
+            "__atributos__": {
+                "marca": "Phillips",
+                "modelo": "PH66666",
+                "color": "Negro",
+                "paisfabric": "Estados Unidos",
+                "preciobase": 5000.0,
+                "tipopantalla": "LED",
+                "pulgadas": 30,
+                "tipodefinicion": "HD",
+                "conexioninternet": true
+            }
+        },
+        {
+            "__class__": "Heladera",
+            "__atributos__": {
+                "marca": "Pepe",
+                "modelo": "P745",
+                "color": "Blanco",
+                "paisfabric": "Argentina",
+                "preciobase": 6000.0,
+                "capacidad": 20,
+                "freezer": true,
+                "ciclica": true
+            }
+        },
+        {
+            "__class__": "Lavarropa",
+            "__atributos__": {
+                "marca": "BGH",
+                "modelo": "B8674",
+                "color": "Blanco",
+                "paisfabric": "Argentina",
+                "preciobase": 7000.0,
+                "capacidadLavado": 5,
+                "velocidadcentri": 5000,
+                "cantidadprogramas": 3,
+                "tipocarga": "superior"
+            }
+        }
+    ]
+}

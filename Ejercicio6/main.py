@@ -10,7 +10,7 @@ if __name__ == '__main__':
         print('3- Mostrar que objeto se encuentra en una determinada posicion.')
         print('4- Mostrar cantidad de aparatos de marca Phillips.')
         print('5- Mostrar marca de lavarropas con carga superior.\n6- Mostrar aparatos en venta.')
-        print('7- Almacenar en archivo JSON.\n0- Salir.')
+        print('7- Almacenar en archivo JSON.\n8- Volver a cargar archivo JSON.\n0- Salir.')
         op = input('Seleccione opcion: ')
         menu.opcion(op)
         ban = op == '0'

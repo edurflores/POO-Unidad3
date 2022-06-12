@@ -1,4 +1,5 @@
-import csv
+from zope.interface import implementer
+from Interfaces import IPrueba
 from claseAparato import Aparato
 from claseTelevisor import Televisor
 from claseHeladera import Heladera
@@ -6,38 +7,62 @@ from claseLavarropa import Lavarropa
 
 from claseLista import Lista
 
+@implementer(IPrueba)
 class ManejadorAparatos:
     __listaAparatos = None
 
     def __init__(self):
         self.__listaAparatos = Lista()
 
-    def testTelevisores(self):
-        archivo = open('televisores.csv')
-        reader = csv.reader(archivo,delimiter=';')
-        ban = True
-        if ban:
-            ban = not ban
-        else:
-            for fila in reader:
-                untele = Televisor(fila[0],fila[1],fila[2],fila[3],float(fila[4]),fila[5],fila[6],fila[7],bool(fila[8]))
-                self.__listaAparatos.agregarAparato(untele)
-        archivo.close()
-        print('Se han cargado televisores para testeo.')
-
     def cargaUnTelevisor(self):
+        ban = False  ### Bandera para asegurar ingreso de valor correcto.
         print('Ingrese los datos del televisor.')
         print('----------------------------------')
         marc = input('Ingrese marca: ')
         mod = input('Ingrese modelo: ')
         col = input('Ingrese color: ')
         pais = input('Ingrese pais de fabricacion: ')
-        precio = float(input('Ingrese precio base: '))
+        while not ban:
+            try:
+                precio = float(input('Ingrese precio base: '))
+                assert type(precio) is float, "Debe ingresar un numero entero o decimal."
+                assert precio >= 0, "No puede ingresar numeros negativos."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
         tipopant = input('Ingrese tipo de pantalla (CRT, VGA, SVGA, Plasma, LCD, LED, TouchScreen, MultiTouch): ')
-        pulg = int(input('Ingrese cantidad de pulgadas (numero entero): '))
-        tdef = input('Ingrese tipo de definicion (SD, HD, FULL HD): ')
-        conex = input('Indique si tiene conexion a internet (1- Si. 2- No.): ')
-        if conex == '1':
+        ban = False
+        while not ban:
+            try:
+                pulg = int(input('Ingrese cantidad de pulgadas (numero entero): '))
+                assert type(pulg) is int, "Debe ser un numero entero."
+                assert pulg > 0, "Debe ser un numero positivo (mayor a cero)."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        ban = False
+        while not ban:
+            try:
+                tdef = input('Ingrese tipo de definicion (SD, HD, FULL HD): ')
+                tdef = tdef.upper()
+                assert tdef == 'SD' or tdef == 'HD' or tdef == 'FULL HD', "Solo puede ser SD, HD o FULL HD."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        ban = False
+        while not ban:
+            try:
+                conex = int(input('Indique si tiene conexion a internet (1- Si. 2- No.): '))
+                assert type(conex) is int, "Debe ser un numero entero."
+                assert conex == 1 or conex == 2, "Debe ser 1 o 2."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        if conex == 1:
             conex = True
         else:
             conex = False
@@ -45,21 +70,57 @@ class ManejadorAparatos:
         return unTelevisor
 
     def cargaUnaHeladera(self):
+        ban = False  ### Bandera para asegurar ingreso de valor correcto.
         print('Ingrese los datos de la heladera.')
         print('----------------------------------')
         marc = input('Ingrese marca: ')
         mod = input('Ingrese modelo: ')
         col = input('Ingrese color: ')
         pais = input('Ingrese pais de fabricacion: ')
-        precio = float(input('Ingrese precio base: '))
-        cap = int(input('Ingrese capacidad en litros (numero entero): '))
-        frez = input('Indique si tiene freezer (1- Si. 2- No.): ')
-        if frez == '1':
+        while not ban:
+            try:
+                precio = float(input('Ingrese precio base: '))
+                assert type(precio) is float, "Debe ingresar un numero entero o decimal."
+                assert precio >= 0, "No puede ingresar numeros negativos."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        ban = False
+        while not ban:
+            try:
+                cap = int(input('Ingrese capacidad en litros (numero entero): '))
+                assert type(cap) is int, "Debe ingresar un numero entero."
+                assert cap > 0, "Debe ser un numero positivo."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        ban = False
+        while not ban:
+            try:
+                frez = int(input('Indique si tiene freezer (1- Si. 2- No.): '))
+                assert type(frez) is int, "Debe ser un numero entero."
+                assert frez == 1 or frez == 2, "Debe ser 1 o 2."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        if frez == 1:
             frez = True
         else:
             frez = False
-        cic = input('Indique si es ciclica (1- Si. 2- No.): ')
-        if cic == '1':
+        ban = False
+        while not ban:
+            try:
+                cic = int(input('Indique si es ciclica (1- Si. 2- No.): '))
+                assert type(cic) is int, "Debe ser un numero entero."
+                assert cic == 1 or cic == 2, "Debe ser 1 o 2."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        if cic == 1:
             cic = True
         else:
             cic = False
@@ -67,21 +128,66 @@ class ManejadorAparatos:
         return unaHeladera
 
     def cargaUnLavarropa(self):
+        ban = False  ### Bandera para asegurar ingreso de valor correcto.
         print('Ingrese los datos del lavarropa.')
         print('----------------------------------')
         marc = input('Ingrese marca: ')
         mod = input('Ingrese modelo: ')
         col = input('Ingrese color: ')
         pais = input('Ingrese pais de fabricacion: ')
-        precio = float(input('Ingrese precio base: '))
-        caplav = int(input('Ingrese capacidad de lavado kg (numero entero): '))
-        vel = int(input('Ingrese velocidad de centrifugado rpm (numero entero): '))
-        cantpr = int(input('Ingrese cantidad de programas (numero entero): '))
-        tipocar = input('Ingrese tipo de carga (Frontal, Superior): ')
+        while not ban:
+            try:
+                precio = float(input('Ingrese precio base: '))
+                assert type(precio) is float, "Debe ingresar un numero entero o decimal."
+                assert precio >= 0, "No puede ingresar numeros negativos."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        ban = False
+        while not ban:
+            try:
+                caplav = int(input('Ingrese capacidad de lavado kg (numero entero): '))
+                assert type(caplav) is int, "Debe ingresar un numero entero."
+                assert caplav > 0, "Debe ingresar un numero positivo (mayor a cero)."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        ban = False
+        while not ban:
+            try:
+                vel = int(input('Ingrese velocidad de centrifugado rpm (numero entero): '))
+                assert type(vel) is int, "Debe ingresar un numero entero."
+                assert vel > 0, "Debe ingresar un numero positivo (mayor a cero)."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        ban = False
+        while not ban:
+            try:
+                cantpr = int(input('Ingrese cantidad de programas (numero entero): '))
+                assert type(cantpr) is int, "Debe ingresar un numero entero."
+                assert cantpr > 0, "Debe ingresar un numero positivo (mayor a cero)."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        ban = False
+        while not ban:
+            try:
+                tipocar = input('Ingrese tipo de carga (Frontal, Superior): ')
+                tipocar = tipocar.lower()
+                assert tipocar == 'frontal' or tipocar == 'superior', "Solo puede optarse por Frontal o Superior."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
         unLavarropa = Lavarropa(marc,mod,col,pais,precio,caplav,vel,cantpr,tipocar)
         return unLavarropa
 
-    def cargaUnDispositivo(self,xtipo):
+    def agregarElemento(self,xtipo): ### Carga un dispositivo (inciso 2)
         ### disp es variable que guarda el objeto dispositivo (televisor, heladera o lavarropa)
         if type(xtipo) is int:
             if xtipo == 1:
@@ -94,7 +200,7 @@ class ManejadorAparatos:
                 disp = self.cargaUnLavarropa()
                 print('Se cargaron los datos de un lavarropa.')
             else:
-                print('Valor incorrecto. No se carga nada.')
+                print('Parametro xtipo incorrecto. Debe ser int. No se carga nada.')
         print('----------------------------------')
         return disp
 
@@ -102,9 +208,25 @@ class ManejadorAparatos:
         self.__listaAparatos.agregarAparato(unAparato)
         print('Se agrego el aparato.')
 
-    def insertaAparatoPosicion(self,unAparato,xpos):
+    def insertarElemento(self,unAparato,xpos): ### Carga un dispositivo en una posicion determinada (Inciso 1)
         if type(xpos) is int:
-            self.__listaAparatos.insertaAparato()
+            self.__listaAparatos.insertaAparato(unAparato,xpos - 1)
+
+    def mostrarElemento(self,xpos): ### Con interface, (Inciso 3)
+        print(xpos)
+        if type(xpos) is int:
+            dato = self.__listaAparatos.buscaPosicion(xpos - 1)
+            if dato != None:
+                if isinstance(dato,Televisor):
+                    print('En esta posicion hay un objeto de clase Televisor.')
+                elif isinstance(dato,Heladera):
+                    print('En esta posicion hay un objeto de clase Heladera.')
+                elif isinstance(dato,Lavarropa):
+                    print('En esta posicion hay un objeto de clase Lavarropa.')
+            else:
+                print('No se encontro un objeto en la lista con la posicion solicitada.')
+        else:
+            print('Error. La posicion debe ser de tipo entero.')
 
     def informaAparatosPhillips(self): ### Inciso 4
         arrecont = [0,0,0] ### Lista con contadores aparatos Phillips(primera componente televisores, segunda heladeras, tercera lavarropas)
@@ -128,7 +250,7 @@ class ManejadorAparatos:
         print('Marcas disponibles de lavarropas que tienen carga superior')
         for aparato in self.__listaAparatos:
             if isinstance(aparato,Lavarropa):
-                if aparato.getTipoCarga() == 'Superior':
+                if aparato.getTipoCarga() == 'superior':
                     print(aparato.getMarca())
 
     def calculaImporte(self,unAparato): ### Calcula importe segun el tipo de aparato
@@ -140,8 +262,9 @@ class ManejadorAparatos:
                 importe += ((2 * importe) / 100) ### Suma porcentaje 2%
             elif unAparato.getTipoDefinicion() == 'FULL HD':
                 importe += ((3 * importe) / 100)  ### Suma porcentaje 3%
-            if unAparato.getConexionInternet(): ### True
+            if unAparato.getConexionInternet(): ### True (tiene conexion a internet)
                 importe += ((10 * importe) / 100) ### Suma porcentaje 10%
+
 
         if isinstance(unAparato,Heladera):
             if unAparato.getFreezer(): ### True (tiene Freezer)
@@ -170,5 +293,12 @@ class ManejadorAparatos:
             elif isinstance(aparato,Lavarropa):
                 print('Tipo de aparato: Lavarropa.')
             print(aparato)
-            print('Importe: {}'.format(self.calculaImporte(aparato)))
+            print('Importe: $%.2f' % (self.calculaImporte(aparato)))
             print('----------------------------------')
+
+    def toJSON(self):
+        d = dict(
+            __class__=self.__class__.__name__,
+            aparatos=[aparato.toJSON() for aparato in self.__listaAparatos]
+        )
+        return d

@@ -6,21 +6,21 @@ class Lavarropa(Aparato):
     __cantidadprogramas = 0
     __tipocarga = ''
 
-    def __init__(self,marc,mod,col,pais,precio,caplav,vel,cantprog,tipoc):
-        super().__init__(marc,mod,col,pais,precio)
-        if type(caplav) is int:
-            self.__capacidadlavado = caplav
+    def __init__(self,marca,modelo,color,paisfabric,preciobase,capacidadLavado,velocidadcentri,cantidadprogramas,tipocarga):
+        super().__init__(marca,modelo,color,paisfabric,preciobase)
+        if type(capacidadLavado) is int:
+            self.__capacidadlavado = capacidadLavado
         else:
             print('Error de parametro capacidad de lavado en Lavarropa. Debe ser int.')
-        if type(vel) is int:
-            self.__velocidadcentri = vel
+        if type(velocidadcentri) is int:
+            self.__velocidadcentri = velocidadcentri
         else:
             print('Error de parametro velocidad de centrifugado en Lavarropa. Debe ser int.')
-        if type(cantprog) is int:
-            self.__cantidadprogramas = cantprog
+        if type(cantidadprogramas) is int:
+            self.__cantidadprogramas = cantidadprogramas
         else:
             print('Error de parametro cantidad de programas en Lavarropa. Debe ser int.')
-        self.__tipocarga = tipoc
+        self.__tipocarga = tipocarga
 
     def getTipoCarga(self):
         return self.__tipocarga
@@ -28,3 +28,19 @@ class Lavarropa(Aparato):
     def getCapacidadLavado(self):
         return self.__capacidadlavado
 
+    def toJSON(self): ### Aparentemente los atributos heredados tambien se ponen como self y no super en este caso.
+        d = dict(
+            __class__=self.__class__.__name__,
+            __atributos__=dict(
+                marca=self.getMarca(),
+                modelo=self.getModelo(),
+                color=self.getColor(),
+                paisfabric=self.getPaisFabric(),
+                preciobase=self.getPrecioBase(),
+                capacidadLavado=self.__capacidadlavado,
+                velocidadcentri=self.__velocidadcentri,
+                cantidadprogramas=self.__cantidadprogramas,
+                tipocarga=self.__tipocarga
+            )
+        )
+        return d

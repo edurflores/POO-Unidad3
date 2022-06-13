@@ -213,7 +213,6 @@ class ManejadorAparatos:
             self.__listaAparatos.insertaAparato(unAparato,xpos - 1)
 
     def mostrarElemento(self,xpos): ### Con interface, (Inciso 3)
-        print(xpos)
         if type(xpos) is int:
             dato = self.__listaAparatos.buscaPosicion(xpos - 1)
             if dato != None:

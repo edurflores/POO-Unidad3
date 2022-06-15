@@ -75,3 +75,27 @@ class Lista:
 
     def getIndice(self):
         return self.__indice
+
+    def insertaAgente(self, unAparato, xpos):  ### Inciso 1
+        encontrado = False
+        if type(xpos) is int:
+            aux = self.__comienzo
+            anterior = aux
+            if xpos < self.__tope:
+                while aux != None and encontrado == False:
+                    if aux.getPosicion() == xpos:
+                        nodo = Nodo(unAparato, xpos)
+                        anterior.setSiguiente(nodo)
+                        aux.incrementaPosicion()
+                        nodo.setSiguiente(aux)
+                        encontrado = True
+                        self.__tope += 1
+                        print('Nodo insertado.')
+                    else:
+                        anterior = aux
+                        aux = aux.getSiguiente()
+                while aux != None and aux.getPosicion() < self.__tope:
+                    aux.incrementaPosicion()
+                    aux = aux.getSiguiente()
+            else:
+                print('La posicion dada supera el tope de la lista. No pudo insertarse.')

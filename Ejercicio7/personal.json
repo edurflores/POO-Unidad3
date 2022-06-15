@@ -9,10 +9,10 @@
                 "nombre": "Lorena",
                 "sueldobasico": 90000.0,
                 "antiguedad": 7,
-                "carrera": "Ciencias de la Computacion",
+                "carrera": "Bioingenieria",
                 "cargo": "semiexclusivo",
-                "catedra": "Computacion distribuida",
-                "area": "Redes neuronales",
+                "catedra": "Analisis biologico",
+                "area": "Tecnologia",
                 "tipoinvestigacion": "Experimental",
                 "categoriaincentivos": "II",
                 "importeextra": 50000.0
@@ -26,7 +26,7 @@
                 "nombre": "Domingo",
                 "sueldobasico": 80000.0,
                 "antiguedad": 4,
-                "area": "Robotica",
+                "area": "Tecnologia",
                 "tipoinvestigacion": "Experimental"
             }
         },
@@ -49,9 +49,9 @@
                 "nombre": "Analia",
                 "sueldobasico": 70000.0,
                 "antiguedad": 3,
-                "carrera": "Profesorado de Matematica",
+                "carrera": "Matematica",
                 "cargo": "simple",
-                "catedra": "Algebra I"
+                "catedra": "Introduccion al algebra"
             }
         },
         {
@@ -62,10 +62,10 @@
                 "nombre": "Adriana",
                 "sueldobasico": 80000.0,
                 "antiguedad": 5,
-                "carrera": "Astronomia",
+                "carrera": "Historia",
                 "cargo": "semiexclusivo",
-                "catedra": "Cuerpos celestes",
-                "area": "Meteoritos",
+                "catedra": "Historia moderna",
+                "area": "Sociales",
                 "tipoinvestigacion": "Descriptiva",
                 "categoriaincentivos": "V",
                 "importeextra": 50000.0
@@ -79,10 +79,10 @@
                 "nombre": "Roberto",
                 "sueldobasico": 90000.0,
                 "antiguedad": 6,
-                "carrera": "Ingenieria Electronica",
+                "carrera": "Biologia",
                 "cargo": "semiexclusivo",
-                "catedra": "Sistemas electronicos digitales",
-                "area": "Teoria binaria digital",
+                "catedra": "Biodiversidad",
+                "area": "Naturales",
                 "tipoinvestigacion": "Descriptiva",
                 "categoriaincentivos": "IV",
                 "importeextra": 50000.0
@@ -96,10 +96,10 @@
                 "nombre": "Celia",
                 "sueldobasico": 80000.0,
                 "antiguedad": 4,
-                "carrera": "Sociologia",
+                "carrera": "Biologia",
                 "cargo": "semiexclusivo",
-                "catedra": "Investigacion Social II",
-                "area": "Cultura popular",
+                "catedra": "Invertebrados",
+                "area": "Naturales",
                 "tipoinvestigacion": "Descriptiva",
                 "categoriaincentivos": "II",
                 "importeextra": 40000.0
@@ -146,7 +146,7 @@
                 "nombre": "Silvio",
                 "sueldobasico": 90000.0,
                 "antiguedad": 5,
-                "area": "Fisica teorica",
+                "area": "Exactas",
                 "tipoinvestigacion": "Descriptiva"
             }
         },
@@ -158,7 +158,7 @@
                 "nombre": "Manuel",
                 "sueldobasico": 80000.0,
                 "antiguedad": 4,
-                "area": "Quimica organica",
+                "area": "Tecnologia",
                 "tipoinvestigacion": "Experimental"
             }
         },
@@ -170,7 +170,7 @@
                 "nombre": "Lucia",
                 "sueldobasico": 70000.0,
                 "antiguedad": 3,
-                "area": "Informatica cuantica",
+                "area": "Exactas",
                 "tipoinvestigacion": "Descriptiva"
             }
         },
@@ -184,7 +184,7 @@
                 "antiguedad": 5,
                 "carrera": "Abogacia",
                 "cargo": "exclusivo",
-                "catedra": "Derecho Politico"
+                "catedra": "Derecho penal"
             }
         },
         {
@@ -195,9 +195,9 @@
                 "nombre": "Pedro",
                 "sueldobasico": 80000.0,
                 "antiguedad": 3,
-                "carrera": "Ingenieria Electronica",
+                "carrera": "Abogacia",
                 "cargo": "semiexclusivo",
-                "catedra": "Analisis Matematico"
+                "catedra": "Derecho penal"
             }
         },
         {
@@ -208,9 +208,9 @@
                 "nombre": "Liliana",
                 "sueldobasico": 60000.0,
                 "antiguedad": 2,
-                "carrera": "Biologia",
+                "carrera": "Historia",
                 "cargo": "simple",
-                "catedra": "Invertebrados"
+                "catedra": "Historia medieval"
             }
         }
     ]

@@ -1,3 +1,5 @@
+from zope.interface import implementer
+from Interfaces import IPrueba
 from claseLista import Lista
 from clasePersonal import Personal
 from claseDocente import Docente
@@ -5,6 +7,7 @@ from claseApoyo import Apoyo
 from claseInvestigador import Investigador
 from claseDocenteInvestigador import DocenteInvestigador
 
+@implementer(IPrueba)
 class ManejadorAgentes:
     __listaAgentes = None
 
@@ -118,7 +121,7 @@ class ManejadorAgentes:
                 print('Error. Reintente introducir un valor valido.')
             else:
                 ban = True
-        area = input('Ingrese area de investigacion (Biodiversidad, Quimica teorica, etc.):')
+        area = input('Ingrese area de investigacion (Exactas, Naturales, Tecnologia, etc.):')
         tipoinve = input('Ingrese tipo de investigacion (Descriptiva, Cuantitativa, Experimental, etc.):')
         unInvestigador = Investigador(cuil,ape,nom,sueldo,anti,area,tipoinve)
         return unInvestigador
@@ -160,7 +163,7 @@ class ManejadorAgentes:
             else:
                 ban = True
         catedra = input('Ingrese catedra:')
-        area = input('Ingrese area de investigacion (Biodiversidad, Quimica teorica, etc.):')
+        area = input('Ingrese area de investigacion (Exactas, Naturales, Tecnologia, etc.):')
         tipoinve = input('Ingrese tipo de investigacion (Descriptiva, Cuantitativa, Experimental, etc.):')
         ban = False
         while not ban:
@@ -211,19 +214,27 @@ class ManejadorAgentes:
         elif tipo == 4:
             unagente = self.cargaDocenteInvestigador()
             print('Se cargaron los datos de un docente investigador.')
-        self.__listaAgentes.agregarPersona(unagente)
-        print('Se ha cargado el agente.')
+        return unagente
 
-    def buscaTipoAgente(self,xpos): ### Inciso 3, (si se lo hace con for, no coincidirian las posiciones)
+    def insertarElemento(self,elem,xpos): ### Implementacion de interface Inciso 1.
+        if type(xpos) is int:
+            self.__listaAgentes.insertaAgente(elem, xpos - 1)
+
+    def agregarElemento(self,elem): ### Implementacion de interface Inciso 2.
+        self.__listaAgentes.agregarPersona(elem)
+        print('Se ha agregado el agente.')
+
+
+    def mostrarElemento(self,xpos): ### Implementacion de interface Inciso 3.
         agente = self.__listaAgentes.buscaPosicion(xpos)
-        if isinstance(agente,Docente):
-            print('En esta posicion hay un docente.')
-        elif isinstance(agente,Apoyo):
-            print('En esta posicion hay un personal de apoyo.')
-        elif isinstance(agente,Investigador):
-            print('En esta posicion hay un investigador.')
-        elif isinstance(agente,DocenteInvestigador):
+        if agente.__class__.__name__ == 'DocenteInvestigador':
             print('En esta posicion hay un docente investigador.')
+        elif agente.__class__.__name__ == 'Apoyo':
+            print('En esta posicion hay un personal de apoyo.')
+        elif agente.__class__.__name__ == 'Investigador':
+            print('En esta posicion hay un investigador.')
+        elif agente.__class__.__name__ == 'Docente':
+            print('En esta posicion hay un docente.')
         else:
             print('No hay agente registrado en esta posicion.')
 
@@ -231,7 +242,7 @@ class ManejadorAgentes:
         xlista.sort(reverse=True)
         return xlista
 
-    def ListaDocentesInvestigadoresCarrera(self,xcarrera): ##3 Inciso 4
+    def ListaDocentesInvestigadoresCarrera(self,xcarrera): ### Inciso 4
         lista = []
         for agente in self.__listaAgentes:
             if isinstance(agente,DocenteInvestigador):
@@ -242,17 +253,17 @@ class ManejadorAgentes:
         for i in range(len(lista)):
             print('%s   %s  %s\t\t%s' % (lista[i].getNombre(),lista[i].getApellido(),lista[i].getCuil(),lista[i].getArea()))
 
-    def cuentaAgentesArea(self,xarea):
+    def cuentaAgentesArea(self,xarea): ### Inciso 5
         cont=[0,0] ## Contador de DocenteInvestigador / Investigador
         for agente in self.__listaAgentes:
-            if agente.getArea().lower() == xarea.lower():
                 if isinstance(agente,DocenteInvestigador):
-                    cont[0] += 1
+                    if agente.getArea().lower() == xarea.lower():
+                        cont[0] += 1
                 elif isinstance(agente,Investigador):
-                    cont[1] += 1
+                    if agente.getArea().lower() == xarea.lower():
+                        cont[1] += 1
         print('Docentes investigadores: {}'.format(cont[0]))
         print('Investigadores: {}'.format(cont[1]))
-
 
     def listadoSueldos(self): ### Inciso 6
         lista = []

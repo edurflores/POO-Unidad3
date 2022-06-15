@@ -1,3 +1,4 @@
+from Interfaces import IPrueba ### Interface del Ejercicio 5
 from claseManejadorAgentes import ManejadorAgentes
 from claseObjectEncoder import ObjectEncoder
 
@@ -19,20 +20,37 @@ class Menu:
             '0':self.salir
         }
         self.__jsonf = ObjectEncoder() ### Administracion de archivo JSON
-        self.__ma = ManejadorAgentes()
+        self.__ma = ManejadorAgentes() ### Manejador
+        self.__interface = IPrueba(self.__ma) ### Interface
+        self.opcion9()
 
     def opcion(self,opc):
         func = self.__switcher.get(opc, lambda:print('Error. Opcion incorrecta.'))
         func()
 
-    def opcion1(self):
-        print('Pendiente.')
-
-    def opcion2(self): ### Debera ser por interface
-        self.__ma.cargaunAgente()
+    def opcion1(self): ### Interface
+        ban = False  ### Bandera para asegurar ingreso de valor correcto.
+        print('Insertar un agente a la coleccion en una posicion determinada.')
+        print('----------------------------------')
+        agente = self.__ma.cargaunAgente()
+        while not ban:
+            try:
+                posicion = int(input('Ingrese posicion (numero entero positivo): '))
+                assert type(posicion) is int, "Debe ser un numero entero."
+                assert posicion > 0, "Debe ser un numero positivo (mayor a cero)."
+            except:
+                print('Error. Reintente introducir un valor valido.')
+            else:
+                ban = True
+        self.__interface.insertarElemento(agente,posicion)
         print('----------------------------------')
 
-    def opcion3(self):
+    def opcion2(self): ### Interface
+        agente = self.__ma.cargaunAgente()
+        self.__interface.agregarElemento(agente)
+        print('----------------------------------')
+
+    def opcion3(self): ### Interface
         ban = False
         while not ban:
             try:
@@ -43,7 +61,7 @@ class Menu:
                 print('Error. Reintente introducir un valor valido.')
             else:
                 ban = True
-        self.__ma.buscaTipoAgente(pos - 1)
+        self.__interface.mostrarElemento(pos - 1)
         print('----------------------------------')
 
     def opcion4(self):
@@ -53,7 +71,7 @@ class Menu:
         print('-------------------------------------------------------------')
 
     def opcion5(self):
-        area = input('Ingrese area de investigacion:')
+        area = input('Ingrese area de investigacion (Exactas, Naturales, Tecnologia, etc.):')
         print('Area de investigacion solicitada: {}'.format(area))
         print('Cantidad de agentes encontrados.')
         print('----------------------------------')
@@ -89,6 +107,7 @@ class Menu:
     def opcion9(self):
         diccionario = self.__jsonf.leerJSONArchivo('personal.json')
         self.__ma = self.__jsonf.decodificarDiccionario(diccionario)
+        self.__interface = IPrueba(self.__ma)
         print('Se ha cargado el archivo JSON.')
         print('----------------------------------')
 

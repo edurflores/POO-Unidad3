@@ -187,7 +187,7 @@ class ManejadorAparatos:
         unLavarropa = Lavarropa(marc,mod,col,pais,precio,caplav,vel,cantpr,tipocar)
         return unLavarropa
 
-    def agregarElemento(self,xtipo): ### Carga un dispositivo (inciso 2)
+    def creaAparato(self,xtipo): ### Carga un dispositivo (inciso 2)
         ### disp es variable que guarda el objeto dispositivo (televisor, heladera o lavarropa)
         if type(xtipo) is int:
             if xtipo == 1:
@@ -204,7 +204,7 @@ class ManejadorAparatos:
         print('----------------------------------')
         return disp
 
-    def agregaUnAparato(self,unAparato):
+    def agregarElemento(self,unAparato): ### Con interface, (Inciso 2)
         self.__listaAparatos.agregarAparato(unAparato)
         print('Se agrego el aparato.')
 

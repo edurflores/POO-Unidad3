@@ -24,7 +24,7 @@ class ObjectEncoder:
                 class_ = eval(class_name)
                 atributos = dAparatos['__atributos__']
                 unAparato = class_(**atributos)
-                manejador.agregaUnAparato(unAparato)
+                manejador.agregarElemento(unAparato)
         return manejador
 
     def guardarJSONArchivo(self,diccionario,archivo):

@@ -20,7 +20,7 @@ class Menu:
         }
         self.__jsonF = ObjectEncoder() ### Administracion de archivo JSON
         self.__ma = ManejadorAparatos() ### Manejador
-        self.__interface = IPrueba(self.__ma) ### Interface
+        self.__interface = IPrueba(self.__ma)  ### Interface
         self.opcion8() ### Carga por primera vez el archivo JSON (eliminar si no hay archivo JSON o dara error)
 
     def opcion(self,opc):
@@ -69,8 +69,9 @@ class Menu:
                 print('Error. Reintente introducir un valor valido.')
             else:
                 ban = True ### Se introdujo un valor valido.
-        aparato = self.__interface.agregarElemento(num) ### Por interface
-        self.__ma.agregaUnAparato(aparato)
+        aparato = self.__ma.creaAparato(num)
+        self.__interface.agregarElemento(aparato) ### Por interface
+        #### self.__ma.agregaUnAparato(aparato)
         print('----------------------------------')
 
     def opcion3(self):
@@ -86,7 +87,8 @@ class Menu:
                 print('Error. Reintente introducir un valor valido.')
             else:
                 ban = True
-        self.__ma.mostrarElemento(pos)
+        ### self.__ma.mostrarElemento(pos)
+        self.__interface.mostrarElemento(pos)
         print('----------------------------------')
 
     def opcion4(self):
@@ -104,11 +106,14 @@ class Menu:
         d = self.__ma.toJSON() ### Diccionario con los objetos a guardar en el archivo JSON
         self.__jsonF.guardarJSONArchivo(d,'aparatoselectronicos.json')
         print('Se ha guardado el archivo JSON.')
+        print('----------------------------------')
 
     def opcion8(self):
         diccionario = self.__jsonF.leerJSONArchivo('aparatoselectronicos.json')
         self.__ma = self.__jsonF.decodificarDiccionario(diccionario)
+        self.__interface = IPrueba(self.__ma)
         print('Se ha cargado el archivo JSON.')
+        print('----------------------------------')
 
     def salir(self):
         print('Salio del programa.')

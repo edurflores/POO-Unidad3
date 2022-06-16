@@ -9,7 +9,7 @@ class Palindromo:
         j = len(self.__palabra) - 1 ### Correccion para que no salga de indice
         bandera = True
         while i < abs(j) and bandera:
-            if self.__palabra[i] != self.__palabra[j]:
+            if self.__palabra[i].lower() != self.__palabra[j].lower(): ### Correccion: aplicado lower() para evitar problema por case sensitive
                 bandera = False
             else:
                 i += 1

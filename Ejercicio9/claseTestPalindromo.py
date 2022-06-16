@@ -12,6 +12,7 @@ class TestPalindromo(unittest.TestCase):
         self.assertEqual(len(self.__palindromo.getPalabra()),5)
 
     ### Tests que fallan porque es case sensitive, es decir Menem != menem. Medida: Se aplicara lower() en el ingreso de palabra en el programa principal
+    ### Tambien se aplicar lower() en la comparacion de caracteres
 
     def test_PrimeraSegundaLetra(self):
         self.assertEqual(self.__palindromo.getPalabra()[0],self.__palindromo.getPalabra()[4])

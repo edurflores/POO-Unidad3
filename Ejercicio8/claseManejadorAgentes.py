@@ -312,83 +312,76 @@ class ManejadorAgentes:
     ### Metodos para interfaces con restricciones
 
     def gastosSueldoPorEmpleado(self, dni): ### ITesorero
-        encontrado = False
-        while not encontrado:
+        terminar = False
+        while not terminar:
             try:
                 agente = next(self.__listaAgentes)
                 if agente.getCuil() == dni:
-                    encontrado = True
+                    terminar = True
                     print('Agente encontrado.')
                     print('Gastos de sueldo para este agente: $%.2f' % (agente.calculaSueldo()))
             except StopIteration:
-                pass
-        if not encontrado:
-            print('No se encontro agente con el DNI solicitado.')
-
+                terminar = True
+                print('No se encontro agente con el DNI solicitado.')
 
     def modificarBasico(self, dni, nuevoBasico): ### IDirector
-        encontrado = False
-        while not encontrado:
+        terminar = False
+        while not terminar:
             try:
                 agente = next(self.__listaAgentes)
                 if agente.getCuil() == dni:
-                    encontrado = True
+                    terminar = True
                     print('Agente encontrado.')
                     agente.setSueldoBasico(nuevoBasico)
                     print('Nuevo sueldo basico: $%.2f' % (agente.getSueldoBasico()))
             except StopIteration:
-                pass
-        if not encontrado:
-            print('No se encontro agente con el DNI solicitado.')
+                terminar = True
+                print('No se encontro agente con el DNI solicitado.')
 
     def modificarPorcentajeporcargo(self, dni, nuevoPorcentaje): ### IDirector
-        encontrado = False
-        while not encontrado:
+        terminar = False
+        while not terminar:
             try:
                 agente = next(self.__listaAgentes)
                 if agente.getCuil() == dni:
-                    encontrado = True
+                    terminar = True
                     print('Agente encontrado.')
                     if isinstance(agente,Docente):
                         agente.setPorcentajeporCargo(nuevoPorcentaje)
                     else:
                         print('Error, este agente no es Docente. No aplica hacer esta modificacion.')
             except StopIteration:
-                pass
-        if not encontrado:
-            print('No se encontro agente con el DNI solicitado.')
+                terminar = True
+                print('No se encontro agente con el DNI solicitado.')
 
     def modificarPorcentajeporcategoria(self, dni, nuevoPorcentaje): ### IDirector
-        encontrado = False
-        while not encontrado:
+        terminar = False
+        while not terminar:
             try:
                 agente = next(self.__listaAgentes)
                 if agente.getCuil() == dni:
-                    encontrado = True
+                    terminar = True
                     print('Agente encontrado.')
                     if isinstance(agente, Apoyo):
                         agente.setPorcentajeporCategoria(nuevoPorcentaje)
                     else:
                         print('Error, este agente no es personal de apoyo. No aplica hacer esta modificacion.')
             except StopIteration:
-                pass
-        if not encontrado:
-            print('No se encontro agente con el DNI solicitado.')
+                terminar = True
+                print('No se encontro agente con el DNI solicitado.')
 
     def modificarImporteExtra(self, dni, nuevoImporteExtra): ### IDirector
-        encontrado = False
-        while not encontrado:
+        terminar = False
+        while not terminar:
             try:
                 agente = next(self.__listaAgentes)
                 if agente.getCuil() == dni:
-                    encontrado = True
+                    terminar = True
                     print('Agente encontrado.')
                     if isinstance(agente, DocenteInvestigador):
                         agente.setImporteExtra(nuevoImporteExtra)
                     else:
                         print('Error, este agente no es docente investigador. No aplica hacer esta modificacion.')
             except StopIteration:
-                pass
-        if not encontrado:
-            print('No se encontro agente con el DNI solicitado.')
-
+                terminar = True
+                print('No se encontro agente con el DNI solicitado.')

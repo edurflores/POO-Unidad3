@@ -4,7 +4,7 @@
         {
             "__class__": "DocenteInvestigador",
             "__atributos__": {
-                "cuil": "27-29303599-7",
+                "cuil": "29303599",
                 "apellido": "Balmaceda",
                 "nombre": "Lorena",
                 "sueldobasico": 90000.0,
@@ -21,7 +21,7 @@
         {
             "__class__": "Investigador",
             "__atributos__": {
-                "cuil": "20-29877123-7",
+                "cuil": "29877123",
                 "apellido": "Fuentes",
                 "nombre": "Domingo",
                 "sueldobasico": 80000.0,
@@ -33,7 +33,7 @@
         {
             "__class__": "Apoyo",
             "__atributos__": {
-                "cuil": "20-19777233-8",
+                "cuil": "19777233",
                 "apellido": "Aballay",
                 "nombre": "Julio",
                 "sueldobasico": 60000.0,
@@ -44,7 +44,7 @@
         {
             "__class__": "Docente",
             "__atributos__": {
-                "cuil": "27-21588966-8",
+                "cuil": "21588966",
                 "apellido": "Vargas",
                 "nombre": "Analia",
                 "sueldobasico": 70000.0,
@@ -57,7 +57,7 @@
         {
             "__class__": "DocenteInvestigador",
             "__atributos__": {
-                "cuil": "27-19961143-7",
+                "cuil": "19961143",
                 "apellido": "Vega",
                 "nombre": "Adriana",
                 "sueldobasico": 80000.0,
@@ -74,7 +74,7 @@
         {
             "__class__": "DocenteInvestigador",
             "__atributos__": {
-                "cuil": "20-17344299-7",
+                "cuil": "17344299",
                 "apellido": "Ferreyra",
                 "nombre": "Roberto",
                 "sueldobasico": 90000.0,
@@ -91,7 +91,7 @@
         {
             "__class__": "DocenteInvestigador",
             "__atributos__": {
-                "cuil": "27-18944526-7",
+                "cuil": "18944526",
                 "apellido": "Gutierrez",
                 "nombre": "Celia",
                 "sueldobasico": 80000.0,
@@ -108,7 +108,7 @@
         {
             "__class__": "Apoyo",
             "__atributos__": {
-                "cuil": "27-30788111-8",
+                "cuil": "30788111",
                 "apellido": "Morales",
                 "nombre": "Karen",
                 "sueldobasico": 75000.0,
@@ -119,7 +119,7 @@
         {
             "__class__": "Apoyo",
             "__atributos__": {
-                "cuil": "27-31455277-8",
+                "cuil": "31455277",
                 "apellido": "Gomez",
                 "nombre": "Eliana",
                 "sueldobasico": 70000.0,
@@ -130,7 +130,7 @@
         {
             "__class__": "Apoyo",
             "__atributos__": {
-                "cuil": "20-29534799-8",
+                "cuil": "29534799",
                 "apellido": "Tejada",
                 "nombre": "Juan",
                 "sueldobasico": 60000.0,
@@ -141,7 +141,7 @@
         {
             "__class__": "Investigador",
             "__atributos__": {
-                "cuil": "20-18722912-7",
+                "cuil": "18722912",
                 "apellido": "Liberatori",
                 "nombre": "Silvio",
                 "sueldobasico": 90000.0,
@@ -153,7 +153,7 @@
         {
             "__class__": "Investigador",
             "__atributos__": {
-                "cuil": "20-28966511-8",
+                "cuil": "28966511",
                 "apellido": "Jimenez",
                 "nombre": "Manuel",
                 "sueldobasico": 80000.0,
@@ -165,7 +165,7 @@
         {
             "__class__": "Investigador",
             "__atributos__": {
-                "cuil": "27-26899477-8",
+                "cuil": "26899477",
                 "apellido": "Figueroa",
                 "nombre": "Lucia",
                 "sueldobasico": 70000.0,
@@ -177,7 +177,7 @@
         {
             "__class__": "Docente",
             "__atributos__": {
-                "cuil": "20-12777399-8",
+                "cuil": "12777399",
                 "apellido": "Rabin",
                 "nombre": "Jose",
                 "sueldobasico": 90000.0,
@@ -190,7 +190,7 @@
         {
             "__class__": "Docente",
             "__atributos__": {
-                "cuil": "20-27555333-6",
+                "cuil": "27555333",
                 "apellido": "Zabaleta",
                 "nombre": "Pedro",
                 "sueldobasico": 80000.0,
@@ -203,7 +203,7 @@
         {
             "__class__": "Docente",
             "__atributos__": {
-                "cuil": "27-21344622-8",
+                "cuil": "21344622",
                 "apellido": "Lopez",
                 "nombre": "Liliana",
                 "sueldobasico": 60000.0,

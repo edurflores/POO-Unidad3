@@ -1,0 +1,217 @@
+{
+    "__class__": "ManejadorAgentes",
+    "agentes": [
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos__": {
+                "cuil": "27-29303599-7",
+                "apellido": "Balmaceda",
+                "nombre": "Lorena",
+                "sueldobasico": 90000.0,
+                "antiguedad": 7,
+                "carrera": "Bioingenieria",
+                "cargo": "semiexclusivo",
+                "catedra": "Analisis biologico",
+                "area": "Tecnologia",
+                "tipoinvestigacion": "Experimental",
+                "categoriaincentivos": "II",
+                "importeextra": 50000.0
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "__atributos__": {
+                "cuil": "20-29877123-7",
+                "apellido": "Fuentes",
+                "nombre": "Domingo",
+                "sueldobasico": 80000.0,
+                "antiguedad": 4,
+                "area": "Tecnologia",
+                "tipoinvestigacion": "Experimental"
+            }
+        },
+        {
+            "__class__": "Apoyo",
+            "__atributos__": {
+                "cuil": "20-19777233-8",
+                "apellido": "Aballay",
+                "nombre": "Julio",
+                "sueldobasico": 60000.0,
+                "antiguedad": 5,
+                "categoria": 18
+            }
+        },
+        {
+            "__class__": "Docente",
+            "__atributos__": {
+                "cuil": "27-21588966-8",
+                "apellido": "Vargas",
+                "nombre": "Analia",
+                "sueldobasico": 70000.0,
+                "antiguedad": 3,
+                "carrera": "Matematica",
+                "cargo": "simple",
+                "catedra": "Introduccion al algebra"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos__": {
+                "cuil": "27-19961143-7",
+                "apellido": "Vega",
+                "nombre": "Adriana",
+                "sueldobasico": 80000.0,
+                "antiguedad": 5,
+                "carrera": "Historia",
+                "cargo": "semiexclusivo",
+                "catedra": "Historia moderna",
+                "area": "Sociales",
+                "tipoinvestigacion": "Descriptiva",
+                "categoriaincentivos": "V",
+                "importeextra": 50000.0
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos__": {
+                "cuil": "20-17344299-7",
+                "apellido": "Ferreyra",
+                "nombre": "Roberto",
+                "sueldobasico": 90000.0,
+                "antiguedad": 6,
+                "carrera": "Biologia",
+                "cargo": "semiexclusivo",
+                "catedra": "Biodiversidad",
+                "area": "Naturales",
+                "tipoinvestigacion": "Descriptiva",
+                "categoriaincentivos": "IV",
+                "importeextra": 50000.0
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "__atributos__": {
+                "cuil": "27-18944526-7",
+                "apellido": "Gutierrez",
+                "nombre": "Celia",
+                "sueldobasico": 80000.0,
+                "antiguedad": 4,
+                "carrera": "Biologia",
+                "cargo": "semiexclusivo",
+                "catedra": "Invertebrados",
+                "area": "Naturales",
+                "tipoinvestigacion": "Descriptiva",
+                "categoriaincentivos": "II",
+                "importeextra": 40000.0
+            }
+        },
+        {
+            "__class__": "Apoyo",
+            "__atributos__": {
+                "cuil": "27-30788111-8",
+                "apellido": "Morales",
+                "nombre": "Karen",
+                "sueldobasico": 75000.0,
+                "antiguedad": 4,
+                "categoria": 22
+            }
+        },
+        {
+            "__class__": "Apoyo",
+            "__atributos__": {
+                "cuil": "27-31455277-8",
+                "apellido": "Gomez",
+                "nombre": "Eliana",
+                "sueldobasico": 70000.0,
+                "antiguedad": 5,
+                "categoria": 13
+            }
+        },
+        {
+            "__class__": "Apoyo",
+            "__atributos__": {
+                "cuil": "20-29534799-8",
+                "apellido": "Tejada",
+                "nombre": "Juan",
+                "sueldobasico": 60000.0,
+                "antiguedad": 4,
+                "categoria": 7
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "__atributos__": {
+                "cuil": "20-18722912-7",
+                "apellido": "Liberatori",
+                "nombre": "Silvio",
+                "sueldobasico": 90000.0,
+                "antiguedad": 5,
+                "area": "Exactas",
+                "tipoinvestigacion": "Descriptiva"
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "__atributos__": {
+                "cuil": "20-28966511-8",
+                "apellido": "Jimenez",
+                "nombre": "Manuel",
+                "sueldobasico": 80000.0,
+                "antiguedad": 4,
+                "area": "Tecnologia",
+                "tipoinvestigacion": "Experimental"
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "__atributos__": {
+                "cuil": "27-26899477-8",
+                "apellido": "Figueroa",
+                "nombre": "Lucia",
+                "sueldobasico": 70000.0,
+                "antiguedad": 3,
+                "area": "Exactas",
+                "tipoinvestigacion": "Descriptiva"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "__atributos__": {
+                "cuil": "20-12777399-8",
+                "apellido": "Rabin",
+                "nombre": "Jose",
+                "sueldobasico": 90000.0,
+                "antiguedad": 5,
+                "carrera": "Abogacia",
+                "cargo": "exclusivo",
+                "catedra": "Derecho penal"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "__atributos__": {
+                "cuil": "20-27555333-6",
+                "apellido": "Zabaleta",
+                "nombre": "Pedro",
+                "sueldobasico": 80000.0,
+                "antiguedad": 3,
+                "carrera": "Abogacia",
+                "cargo": "semiexclusivo",
+                "catedra": "Derecho penal"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "__atributos__": {
+                "cuil": "27-21344622-8",
+                "apellido": "Lopez",
+                "nombre": "Liliana",
+                "sueldobasico": 60000.0,
+                "antiguedad": 2,
+                "carrera": "Historia",
+                "cargo": "simple",
+                "catedra": "Historia medieval"
+            }
+        }
+    ]
+}

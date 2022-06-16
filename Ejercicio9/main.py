@@ -1,15 +1,80 @@
-from claseMenu import Menu
+import unittest
+from clasePalindromo import Palindromo
+from claseTestPalindromo import TestPalindromo
 
 if __name__ == '__main__':
-    menu = Menu()
-    ban = False
-    while not ban:
-        print('Menu Principal')
-        print('1- Insertar agente.\n2- Agregar agente.\n3- Mostrar que agente se encuentra en una posicion dada.')
-        print('4- Mostrar listado de docentes investigadores en una carrera.')
-        print('5- Contar personal docente investigador e investigador en un area de investigacion.')
-        print('6- Mostrar listado ordenado de agentes con sueldo.\n7- Mostrar informe de sueldos en una categoria de investigacion.')
-        print('8- Guardar archivo JSON.\n9- Volver a cagar archivo JSON.\n0- Salir.')
-        op = input('Seleccione opcion:')
-        menu.opcion(op)
-        ban = op == '0'
+    ### unittest.main() ### Testeos, quitar comentario para usar
+
+
+    palindromo = Palindromo('Eduardo') ### No deberia ser palindromo
+    print('Palabra: Eduardo')
+    if palindromo.esPalindromo(): ### True
+        print('Esta palabra es palindromo.')
+    else:
+        print('Esta palabra NO es palindromo.')
+    print('---------------------')
+    print('Palabra: NeUqUeN')
+    palindromo.setPalabra('NeUqUeN') ### Deberia ser palindromo
+    if palindromo.esPalindromo(): ### True
+        print('Esta palabra es palindromo.')
+    else:
+        print('Esta palabra NO es palindromo.')
+    print('---------------------')
+    print('Palabra: Japon')
+    palindromo.setPalabra('Japon')  ### No Deberia ser palindromo
+    if palindromo.esPalindromo():  ### True
+        print('Esta palabra es palindromo.')
+    else:
+        print('Esta palabra NO es palindromo.')
+    print('---------------------')
+    print('Palabra: ana')
+    palindromo.setPalabra('ana')  ### Deberia ser palindromo
+    if palindromo.esPalindromo():  ### True
+        print('Esta palabra es palindromo.')
+    else:
+        print('Esta palabra NO es palindromo.')
+    print('---------------------')
+    print('Palabra: kitsune')
+    palindromo.setPalabra('kitsune')  ### No deberia ser palindromo
+    if palindromo.esPalindromo():  ### True
+        print('Esta palabra es palindromo.')
+    else:
+        print('Esta palabra NO es palindromo.')
+    print('---------------------')
+    print('Palabra: ANA')
+    palindromo.setPalabra('ANA')  ### Deberia ser palindromo
+    if palindromo.esPalindromo():  ### True
+        print('Esta palabra es palindromo.')
+    else:
+        print('Esta palabra NO es palindromo.')
+    print('---------------------')
+    print('Palabra: anana')
+    palindromo.setPalabra('anana') ### Deberia ser palindromo
+    if palindromo.esPalindromo(): ### True
+        print('Esta palabra es palindromo.')
+    else:
+        print('Esta palabra NO es palindromo.')
+    print('---------------------')
+    print('Palabra: MENEM')
+    palindromo.setPalabra('MENEM') ### Deberia ser palindromo
+    if palindromo.esPalindromo(): ### True
+        print('Esta palabra es palindromo.')
+    else:
+        print('Esta palabra NO es palindromo.')
+    print('---------------------')
+    print('Palabra: amorroma')
+    palindromo.setPalabra('amorroma')  ### Deberia ser palindromo
+    if palindromo.esPalindromo():  ### True
+        print('Esta palabra es palindromo.')
+    else:
+        print('Esta palabra NO es palindromo.')
+    print('---------------------')
+
+
+    print('Pruebe usted una palabra.')
+    palabra = input('Ingrese una palabra:')
+    palindromo = Palindromo(palabra)
+    if palindromo.esPalindromo():  ### True
+        print('Esta palabra es palindromo.')
+    else:
+        print('Esta palabra NO es palindromo.')
